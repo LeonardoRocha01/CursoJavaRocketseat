@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: api_cursos_postgres
+    environment:
+      POSTGRES_DB: cursos_db
+      POSTGRES_USER: cursos_user
+      POSTGRES_PASSWORD: cursos_pass
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
